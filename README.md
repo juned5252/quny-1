@@ -4,29 +4,23 @@
 
 A basic Express project using [Jade](https://www.npmjs.com/package/jade) and [Stylus](http://stylus-lang.com/).
 
-## To Run
+## Running The App
 
-1) Clone this repository to your host computer by using `git clone`
-```
-git clone https://github.com/robinsoncol/no-name-proj.git
-```
-(or click *'Clone or download'*, then *'Open in Desktop'*).
+1) Make sure [NodeJS]() is installed.
+2) From your project folder, run the following command to install project dependencies:
 
-2) Change into the root directory of the repository.
-```
-cd no-name-proj/
-```
-3) Install `npm` by using git bash or command prompt (if previously not installed).
-```
-npm install
-```
-4) Start `npm`.
-```
-npm start
-```
->Note: Step 1 and 3 are for the first run only. For the second run and later, use Step 2, 4 and 5.
+  ```shell
+  npm install
+  ```
+3) Make sure [Gulp]() is installed globally:
 
-5) See the project by entering this in your web browser address bar.
-```
-http://localhost:3000/
-```
+  ```shell
+  npm install -g gulp
+  ```
+4) Run the app using the following command:
+
+  ```shell
+  gulp watch
+  ```
+5) Browse to `http://localhost:3001/`.
+> Making changes to some of the source files, triggers a browser refresh
