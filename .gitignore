@@ -33,4 +33,4 @@ npm-debug.log
 .vscode/
 
 # CSS files generated from Stylus
-public/stylesheets/*.css
+public/dist/
