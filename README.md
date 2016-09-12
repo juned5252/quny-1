@@ -6,13 +6,13 @@ A basic Express project using [Jade](https://www.npmjs.com/package/jade) and [St
 
 ## Running The App
 
-1) Make sure [NodeJS]() is installed.
+1) Make sure [NodeJS](https://nodejs.org/en/) is installed.
 2) From your project folder, run the following command to install project dependencies:
 
   ```shell
   npm install
   ```
-3) Make sure [Gulp]() is installed globally:
+3) Make sure [Gulp](http://gulpjs.com/) is installed globally:
 
   ```shell
   npm install -g gulp
