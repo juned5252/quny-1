@@ -1,7 +1,7 @@
 
 module.exports = {
   server: {
-    path: 'bin/www', 
+    path: 'bin/www',
     execArgv: ['--harmony'],
     env: {
       NODE_ENV: 'development',
