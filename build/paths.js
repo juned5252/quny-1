@@ -7,6 +7,7 @@ module.exports = {
   // Files paths in sources should trigger a browser refresh upon
   // changes made to them
   sources: [app, routes, views],
+  views: views,
   stylus: 'public/stylus/**/*.styl',
   output: output,
   cssOutput: output + 'css/'
