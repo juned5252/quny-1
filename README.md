@@ -2,7 +2,7 @@
 
 > A project with no name
 
-A basic Express project using [Jade](https://www.npmjs.com/package/jade) and [Stylus](http://stylus-lang.com/).
+A basic Express project using [Pug](https://pugjs.org/api/getting-started.html) and [Stylus](http://stylus-lang.com/).
 
 ## Running The App
 
