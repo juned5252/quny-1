@@ -1,6 +1,6 @@
 var app = 'app.js';
 var routes = 'routes/**/*.js';
-var views = 'views/**/*.jade';
+var views = 'views/**/*.pug';
 var output = 'public/dist/';
 
 module.exports = {
