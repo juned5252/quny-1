@@ -1,8 +1,6 @@
-# NoNameProj
+# Friendly Stuff
 
-> A project with no name
-
-A basic Express project using [Pug](https://pugjs.org/api/getting-started.html) and [Stylus](http://stylus-lang.com/).
+A website to manage the selling/sharing of your stuff, across multiple social media accounts.
 
 ## Running The App
 
