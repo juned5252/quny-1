@@ -10,15 +10,11 @@ A website to manage the selling/sharing of your stuff, across multiple social me
   ```shell
   npm install
   ```
-3) Make sure [Gulp](http://gulpjs.com/) is installed globally:
 
-  ```shell
-  npm install -g gulp
-  ```
-4) Run the app using the following command:
+3) Run the app using the following command:
 
   ```shell
   gulp watch
   ```
-5) Browse to `http://localhost:3001/`.
+4) Browse to `http://localhost:3001/`.
 > Making changes to some of the source files, triggers a browser refresh
