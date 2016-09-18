@@ -5,6 +5,7 @@ A website to manage the selling/sharing of your stuff, across multiple social me
 ## Running The App
 
 1) Make sure [NodeJS](https://nodejs.org/en/) is installed.
+
 2) From your project folder, run the following command to install project dependencies:
 
   ```shell
