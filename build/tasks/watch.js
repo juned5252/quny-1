@@ -6,10 +6,9 @@ var paths = require('../paths');
 
 gulp.task('watch', ['server:start'], function () {
   gulp.watch(paths.sources, ['server:restart']);
-  gulp.watch(paths.stylus, ['stylus']);
 });
 
-gulp.task('server:start', ['build'], function () {
+gulp.task('server:start', [], function () {
   server.listen(configs.server, function (error) {
     if (!error) { bs.init(configs.bs); }
   });

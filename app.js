@@ -4,25 +4,24 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
+var connect_assets = require('connect-assets')();
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
 
-// view engine setup
+// View Engine Setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'assets', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Processing of stylus file is now handled through gulp
-//app.use(require('stylus').middleware(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'assets')));
+app.use(connect_assets);
 
 app.use('/', routes);
 app.use('/users', users);

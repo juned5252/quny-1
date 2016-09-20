@@ -7,13 +7,14 @@
   },
   "dependencies": {
     "body-parser": "~1.15.1",
+    "connect-assets": "^5.3.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "express": "~4.13.4",
     "morgan": "~1.7.0",
     "pug": "^2.0.0-beta6",
     "serve-favicon": "~2.3.0",
-    "stylus": "0.54.5"
+    "stylus": "^0.54.5"
   },
   "devDependencies": {
     "browser-sync": "^2.15.0",
@@ -24,9 +25,7 @@
     "gulp-eslint": "^3.0.1",
     "gulp-pug-linter": "^0.3.0",
     "gulp-stylint": "^3.0.0",
-    "gulp-stylus": "^2.5.0",
     "require-dir": "^0.3.0",
-    "run-sequence": "^1.2.2",
     "vinyl-paths": "^2.1.0"
   }
 }

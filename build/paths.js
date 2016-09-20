@@ -1,14 +1,11 @@
 var app = 'app.js';
 var routes = 'routes/**/*.js';
 var views = 'views/**/*.pug';
-var output = 'public/dist/';
-
+var stylus = 'assets/css/**/*.styl';
 module.exports = {
-  // Files paths in sources should trigger a browser refresh upon
-  // changes made to them
-  sources: [app, routes, views],
+  // Files paths in sources should trigger a browser refresh upon changes made to them
+  sources: [app, routes, views, stylus],
   views: views,
-  stylus: 'public/stylus/**/*.styl',
-  output: output,
-  cssOutput: output + 'css/'
+  stylus: stylus,
+  outputs: ['builtAssets/']
 };

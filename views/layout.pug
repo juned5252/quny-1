@@ -2,6 +2,7 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='dist/css/style.css')
+    != css("style")
   body
     block content
+    != js("main")
