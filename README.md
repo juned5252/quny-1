@@ -1,6 +1,6 @@
 # Friendly Stuff
 
-A website to manage the selling/sharing of your stuff, across multiple social media accounts.
+A website to manage the selling/sharing of personal items, across multiple social media platform.
 
 ## Running The App
 
@@ -17,5 +17,6 @@ A website to manage the selling/sharing of your stuff, across multiple social me
   ```shell
   gulp watch
   ```
+
 4) Browse to `http://localhost:3001/`.
-> Making changes to some of the source files, triggers a browser refresh
+> Making changes to some source files triggers a browser refresh.

@@ -5,7 +5,7 @@ module.exports = {
     execArgv: ['--harmony'],
     env: {
       NODE_ENV: 'development',
-      DEBUG: 'NoNameProj:*'
+      DEBUG: 'FriendlyStuff:*'
     }
   },
   bs: {
