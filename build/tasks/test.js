@@ -5,6 +5,11 @@ var configs = require('../configs');
 var nightwatch = require('gulp-nightwatch');
 var selenium = require('selenium-download');
 
+// Stuff to run on Travis CI
+gulp.task('travis', ['test'], function() {
+  process.exit('0');
+});
+
 // Run unit tests with Mocha
 gulp.task('test', function() {
   return gulp.src(paths.test, {read: false})
