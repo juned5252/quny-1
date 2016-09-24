@@ -22,15 +22,15 @@ A website to manage the selling/sharing of personal items, across multiple socia
   ```
 
 4) Browse to `http://localhost:3001/`.
-> Note, making changes to certain source files triggers a full browser refresh.
+> Note, making changes to certain files triggers a full browser refresh.
 
-5) Run unit test using [Mocha](https://mochajs.org/):
+5) Run unit tests using [Mocha](https://mochajs.org/):
 
   ```
   gulp test
   ```
 
-5) Run end-to-end using [Nightwatch](http://nightwatchjs.org/):
+5) Run end-to-end tests using [Nightwatch](http://nightwatchjs.org/):
 
   ```
   gulp e2e:drivers
