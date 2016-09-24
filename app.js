@@ -6,12 +6,11 @@ var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var connect_assets = require('connect-assets')();
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var index = require('./controllers/index');
 
 var app = express();
 
-// View Engine Setup
+// View engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -23,8 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'assets')));
 app.use(connect_assets);
 
-app.use('/', routes);
-app.use('/users', users);
+app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
