@@ -9,7 +9,7 @@ A website to manage the selling/sharing of personal items, across multiple socia
 
 1) Make sure [NodeJS](https://nodejs.org/en/) is installed.
 
-2) Download dependencies
+2) Download dependencies:
 
   ```
   npm install
