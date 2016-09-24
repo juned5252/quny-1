@@ -8,8 +8,20 @@ module.exports = {
       DEBUG: 'FriendlyStuff:*'
     }
   },
+
   bs: {
     online: false,
     proxy: 'http://localhost:3000'
+  },
+
+  mocha: {
+    reporter: 'dot'
+  },
+
+  mochaIstanbul: {
+    reporter: 'dot',
+    istanbul: {
+      dir: 'test/coverage'
+    }
   }
 };
