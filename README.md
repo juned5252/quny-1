@@ -30,7 +30,7 @@ A website to manage the selling/sharing of personal items, across multiple socia
   gulp test
   ```
 
-5) To run end-to-end using [Nightwatch](http://nightwatchjs.org/):
+5) Run end-to-end using [Nightwatch](http://nightwatchjs.org/):
 
   ```
   gulp e2e:drivers
