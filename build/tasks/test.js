@@ -6,7 +6,7 @@ var nightwatch = require('gulp-nightwatch');
 var selenium = require('selenium-download');
 
 // Tests to run on Travis CI
-gulp.task('travis', ['test:coverage']);
+gulp.task('travis', ['test:coverage', 'e2e:drivers', 'e2e']);
 
 // Run unit tests with Mocha
 gulp.task('test', function() {
@@ -18,23 +18,6 @@ gulp.task('test', function() {
 gulp.task('test:coverage', function() {
   return gulp.src(paths.test, {read: false})
     .pipe(mocha(configs.mochaIstanbul));
-});
-
-// Run end-to-end tests with Nightwatch
-gulp.task('e2e', function() {
-  return gulp.src('')
-    .pipe(nightwatch({
-      configFile: 'test/e2e/nightwatch.json'
-    }));
-});
-
-// Run end-to-end test with Nightwatch, Chrome version
-gulp.task('e2e:chrome', function() {
-  return gulp.src('')
-    .pipe(nightwatch({
-      configFile: 'test/e2e/nightwatch.json',
-      cliArgs: ['--env chrome']
-    }));
 });
 
 // Download the selenium standalone driver and the chrome web driver
@@ -55,4 +38,21 @@ gulp.task('e2e:drivers:update', function() {
       resolve();
     });
   });
+});
+
+// Run end-to-end tests with Nightwatch
+gulp.task('e2e', function() {
+  return gulp.src('')
+    .pipe(nightwatch({
+      configFile: 'test/e2e/nightwatch.json'
+    }));
+});
+
+// Run end-to-end test with Nightwatch, Chrome version
+gulp.task('e2e:chrome', function() {
+  return gulp.src('')
+    .pipe(nightwatch({
+      configFile: 'test/e2e/nightwatch.json',
+      cliArgs: ['--env chrome']
+    }));
 });
