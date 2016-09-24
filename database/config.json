@@ -15,10 +15,6 @@
     "dialect": "update me"
   },
   "production": {
-    "username": "update me",
-    "password": "update me",
-    "database": "update me",
-    "host": "update me",
-    "dialect": "update me"
+    "use_env_variable": "FS_DB_CONNECTION"
   }
 }
