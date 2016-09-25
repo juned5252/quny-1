@@ -11,10 +11,15 @@ gulp.task('watch', ['server:start'], function () {
 
 /** Starts a server with BrowserSync functionality */
 gulp.task('server:start', function () {
-  server.listen(configs.server, function (error) {
-    if (!error) {
-      bs.init(configs.browserSync);
-    }
+  return new Promise(function(resolve, reject) {
+    server.listen(configs.server, function (error) {
+      if (!error) {
+        bs.init(configs.browserSync);
+        resolve();
+      } else {
+        reject(error);
+      }
+    });
   });
 });
 
