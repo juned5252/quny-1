@@ -49,7 +49,7 @@
         "browserName" : "phantomjs",
         "javascriptEnabled" : true,
         "acceptSslCerts" : true,
-        "phantomjs.binary.path" : "./node_modules/.bin/phantomjs.cmd",
+        "phantomjs.binary.path" : "node_modules/.bin/phantomjs",
         "phantomjs.cli.args" : ["--ignore-ssl-errors=true"]
       }
     }
