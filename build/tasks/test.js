@@ -8,7 +8,9 @@ var configs     = require('../configs');
 
 /** Runs certain tests on Travis CI */
 gulp.task('travis', function(cb) {
-  runSequence('test:coverage', 'selenium', 'e2e:phantomjs', cb);
+  runSequence('server:start','test:coverage', 'selenium', 'e2e:phantomjs', function() {
+    cb();
+  });
 });
 
 /** Runs unit tests with Mocha */

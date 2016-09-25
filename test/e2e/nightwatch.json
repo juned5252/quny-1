@@ -41,7 +41,6 @@
     },
 
     "phantomjs": {
-      "start_process" : false,
       "desiredCapabilities" : {
         "browserName" : "phantomjs",
         "javascriptEnabled" : true,
