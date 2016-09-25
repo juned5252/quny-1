@@ -41,3 +41,6 @@ test/coverage
 # Nightwatch
 test/e2e/lib
 test/e2e/reports
+
+# Phantomjs
+phantomjsdriver.log

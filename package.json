@@ -36,8 +36,10 @@
     "gulp-stylint": "^3.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
+    "phantomjs-prebuilt": "^2.1.12",
     "require-dir": "^0.3.0",
-    "selenium-download": "^2.0.6",
+    "run-sequence": "^1.2.2",
+    "selenium-standalone": "^5.7.2",
     "vinyl-paths": "^2.1.0"
   }
 }

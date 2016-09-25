@@ -1,58 +1,59 @@
-var gulp = require('gulp');
-var mocha = require('gulp-spawn-mocha');
-var paths = require('../paths');
-var configs = require('../configs');
-var nightwatch = require('gulp-nightwatch');
-var selenium = require('selenium-download');
+var gulp        = require('gulp');
+var mocha       = require('gulp-spawn-mocha');
+var nightwatch  = require('gulp-nightwatch');
+var selenium    = require('selenium-standalone');
+var runSequence = require('run-sequence');
+var server      = require('gulp-develop-server');
+var paths       = require('../paths');
+var configs     = require('../configs');
 
-// Tests to run on Travis CI
-gulp.task('travis', ['test:coverage']);
-
-// Run unit tests with Mocha
+/** Runs unit tests with Mocha */
 gulp.task('test', function() {
   return gulp.src(paths.test, {read: false})
     .pipe(mocha(configs.mocha));
 });
 
-// Run unit tests with Mocha and generate coverage using Istanbul
-gulp.task('test:coverage', function() {
+/** 
+ * Runs unit tests and generate a coverage report with Istanbul
+ * Report files generated under /test/coverage
+ **/
+gulp.task('coverage', function() {
   return gulp.src(paths.test, {read: false})
     .pipe(mocha(configs.mochaIstanbul));
 });
 
-// Run end-to-end tests with Nightwatch
-gulp.task('e2e', function() {
-  return gulp.src('')
-    .pipe(nightwatch({
-      configFile: 'test/e2e/nightwatch.json'
-    }));
-});
-
-// Run end-to-end test with Nightwatch, Chrome version
-gulp.task('e2e:chrome', function() {
-  return gulp.src('')
-    .pipe(nightwatch({
-      configFile: 'test/e2e/nightwatch.json',
-      cliArgs: ['--env chrome']
-    }));
-});
-
-// Download the selenium standalone driver and the chrome web driver
-// These drivers are required to use Nightwatch
-gulp.task('e2e:drivers', function() {
+/** 
+ * Gets drivers required by Nightwatch
+ * Drivers downloaded under /test/e2e/lib
+ **/
+gulp.task('selenium', function() {
   return new Promise(function(resolve) {
-    selenium.ensure(paths.e2eLib, function() {
+    selenium.install(configs.selenium, function() {
       resolve();
     });
   });
 });
 
-// Update the selenium standalone driver and chrome web driver
-// Latest versions are placed under test/e2e/lib
-gulp.task('e2e:drivers:update', function() {
-  return new Promise(function(resolve) {
-    selenium.update(paths.e2eLib, function() {
-      resolve();
-    });
+/** Runs end-to-end tests with Nightwatch and Firefox */
+gulp.task('e2e',function() {
+  return gulp.src('')
+    .pipe(nightwatch({
+      configFile: paths.nightwatch
+    }));
+});
+
+/** Runs end-to-end tests with Nightwatch and PhantomJS */
+gulp.task('e2e:phantomjs', function() {
+  return gulp.src('')
+    .pipe(nightwatch({
+      configFile: paths.nightwatch,
+      cliArgs: {env: 'phantomjs'}
+    }));
+});
+
+/** Runs certain tests on Travis CI */
+gulp.task('travis', function () {
+  runSequence('server', 'coverage', 'selenium', 'e2e:phantomjs', function() {
+    server.kill();
   });
 });

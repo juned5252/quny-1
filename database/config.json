@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "unix_role",
-    "password": "abc123",
-    "database": "todos",
+    "username": "johndoe",
+    "password": "password",
+    "database": "stuff",
     "host": "127.0.0.1",
     "port": "5432",
     "dialect": "postgres"
