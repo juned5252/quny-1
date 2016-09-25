@@ -32,7 +32,7 @@ module.exports = {
   // selenium-standalone configs
   selenium: {
     basePath: 'test/e2e/lib',
-    version: '2.43.1',
+    version: '2.53.1',
     baseURL: 'https://selenium-release.storage.googleapis.com',
     logger: function () {},
     drivers: {

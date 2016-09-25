@@ -31,3 +31,11 @@ gulp.task('server:restart', function () {
     }
   });
 });
+
+
+/** Start a simpe server */
+gulp.task('server', function (done) {
+  server.listen(configs.server, function() {
+    done();
+  });
+});

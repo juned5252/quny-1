@@ -3,16 +3,9 @@ var mocha       = require('gulp-spawn-mocha');
 var nightwatch  = require('gulp-nightwatch');
 var selenium    = require('selenium-standalone');
 var runSequence = require('run-sequence');
+var server      = require('gulp-develop-server');
 var paths       = require('../paths');
 var configs     = require('../configs');
-
-/** Runs certain tests on Travis CI */
-gulp.task('travis', function(cb) {
-  runSequence('server:start','test:coverage', 'selenium', 'e2e:phantomjs', function() {
-    process.exit(0);
-    cb();
-  });
-});
 
 /** Runs unit tests with Mocha */
 gulp.task('test', function() {
@@ -65,4 +58,14 @@ gulp.task('e2e:phantomjs', function() {
       configFile: paths.nightwatch,
       cliArgs: {env: 'phantomjs'}
     }));
+});
+
+/** integration tests */
+gulp.task('integration', function (callback) {
+  runSequence('server','test:coverage', 'selenium', 'e2e:phantomjs', callback);
+});
+
+/** Runs certain tests on Travis CI */
+gulp.task('travis', ['integration'], function() {
+  server.kill();
 });
