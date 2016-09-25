@@ -11,4 +11,6 @@ before_script:
 
 script: gulp travis
 
-after_success: ./node_modules/.bin/coveralls --verbose < test/coverage/lcov.info
+after_success:
+  - ./node_modules/.bin/coveralls --verbose < test/coverage/lcov.info
+  - cat /home/travis/build/robinsoncol/friendly-stuff/test/e2e/reports/selenium-debug.log

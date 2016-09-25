@@ -9,7 +9,7 @@ var configs     = require('../configs');
 /** Runs certain tests on Travis CI */
 gulp.task('travis', function(cb) {
   runSequence('server:start','test:coverage', 'selenium', 'e2e:phantomjs', function() {
-    process.exit(0);
+
     cb();
   });
 });
