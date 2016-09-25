@@ -17,7 +17,7 @@ gulp.task('test', function() {
  * Runs unit tests and generate a coverage report with Istanbul
  * Report files generated under /test/coverage
  **/
-gulp.task('test:coverage', function() {
+gulp.task('coverage', function() {
   return gulp.src(paths.test, {read: false})
     .pipe(mocha(configs.mochaIstanbul));
 });
@@ -27,7 +27,7 @@ gulp.task('test:coverage', function() {
  * Drivers downloaded under /test/e2e/lib
  **/
 gulp.task('selenium', function() {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function(resolve) {
     selenium.install(configs.selenium, function() {
       resolve();
     });
@@ -42,15 +42,6 @@ gulp.task('e2e',function() {
     }));
 });
 
-/** Runs end-to-end tests with Nightwatch and Chrome */
-gulp.task('e2e:chrome',function() {
-  return gulp.src('')
-    .pipe(nightwatch({
-      configFile: paths.nightwatch,
-      cliArgs: {env: 'chrome'}
-    }));
-});
-
 /** Runs end-to-end tests with Nightwatch and PhantomJS */
 gulp.task('e2e:phantomjs', function() {
   return gulp.src('')
@@ -60,12 +51,9 @@ gulp.task('e2e:phantomjs', function() {
     }));
 });
 
-/** integration tests */
-gulp.task('integration', function (callback) {
-  runSequence('server','test:coverage', 'selenium', 'e2e:phantomjs', callback);
-});
-
 /** Runs certain tests on Travis CI */
-gulp.task('travis', ['integration'], function() {
-  server.kill();
+gulp.task('travis', function () {
+  runSequence('server', 'coverage', 'selenium', 'e2e:phantomjs', function() {
+    server.kill();
+  });
 });

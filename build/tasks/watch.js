@@ -32,10 +32,13 @@ gulp.task('server:restart', function () {
   });
 });
 
-
-/** Start a simpe server */
-gulp.task('server', function (done) {
-  server.listen(configs.server, function() {
-    done();
+/**
+ * Start a simpe server. Used for e2e testing
+ **/
+gulp.task('server', function () {
+  return new Promise(function(resolve) {
+    server.listen(configs.server, function() {
+      resolve()
+    });
   });
 });
