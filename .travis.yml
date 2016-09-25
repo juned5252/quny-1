@@ -6,11 +6,7 @@ node_js:
 env: 
  - NODE_ENV="development"
 
-before_script:
-  - npm install -g gulp
-
 script: gulp travis
 
 after_success:
   - ./node_modules/.bin/coveralls --verbose < test/coverage/lcov.info
-  - cat /home/travis/build/robinsoncol/friendly-stuff/test/e2e/reports/selenium-debug.log
