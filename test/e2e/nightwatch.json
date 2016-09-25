@@ -4,7 +4,7 @@
 
   "selenium" : {
     "start_process" : true,
-    "server_path" : "./test/e2e/lib/selenium-server/2.53.1-server.jar",
+    "server_path" : "./test/e2e/lib/selenium-server/2.43.1-server.jar",
     "log_path" : "./test/e2e/reports",
     "host" : "127.0.0.1",
     "port" : 4444,
@@ -41,11 +41,15 @@
     },
 
     "phantomjs": {
+      "launch_url" : "http://localhost:3000",
+      "selenium_port"  : 4444,
+      "selenium_host"  : "localhost",
+      "silent": false,
       "desiredCapabilities" : {
         "browserName" : "phantomjs",
         "javascriptEnabled" : true,
         "acceptSslCerts" : true,
-        "phantomjs.binary.path" : "./node_modules/.bin/phantomjs",
+        "phantomjs.binary.path" : "./node_modules/.bin/phantomjs.cmd",
         "phantomjs.cli.args" : ["--ignore-ssl-errors=true"]
       }
     }
