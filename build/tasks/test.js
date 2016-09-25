@@ -1,58 +1,65 @@
-var gulp = require('gulp');
-var mocha = require('gulp-spawn-mocha');
-var paths = require('../paths');
-var configs = require('../configs');
-var nightwatch = require('gulp-nightwatch');
-var selenium = require('selenium-download');
+var gulp        = require('gulp');
+var mocha       = require('gulp-spawn-mocha');
+var nightwatch  = require('gulp-nightwatch');
+var selenium    = require('selenium-standalone');
+var runSequence = require('run-sequence');
+var paths       = require('../paths');
+var configs     = require('../configs');
 
-// Tests to run on Travis CI
-gulp.task('travis', ['test:coverage', 'e2e:drivers', 'e2e']);
+/** Runs certain tests on Travis CI */
+gulp.task('travis', function(cb) {
+  runSequence('test:coverage', 'selenium', 'e2e:phantomjs', cb);
+});
 
-// Run unit tests with Mocha
+/** Runs unit tests with Mocha */
 gulp.task('test', function() {
   return gulp.src(paths.test, {read: false})
     .pipe(mocha(configs.mocha));
 });
 
-// Run unit tests with Mocha and generate coverage using Istanbul
+/** 
+ * Runs unit tests and generate a coverage report with Istanbul
+ * Report files generated under /test/coverage
+ **/
 gulp.task('test:coverage', function() {
   return gulp.src(paths.test, {read: false})
     .pipe(mocha(configs.mochaIstanbul));
 });
 
-// Download the selenium standalone driver and the chrome web driver
-// These drivers are required to use Nightwatch
-gulp.task('e2e:drivers', function() {
-  return new Promise(function(resolve) {
-    selenium.ensure(paths.e2eLib, function() {
+/** 
+ * Gets drivers required by Nightwatch
+ * Drivers downloaded under /test/e2e/lib
+ **/
+gulp.task('selenium', function() {
+  return new Promise(function(resolve, reject) {
+    selenium.install(configs.selenium, function() {
       resolve();
     });
   });
 });
 
-// Update the selenium standalone driver and chrome web driver
-// Latest versions are placed under test/e2e/lib
-gulp.task('e2e:drivers:update', function() {
-  return new Promise(function(resolve) {
-    selenium.update(paths.e2eLib, function() {
-      resolve();
-    });
-  });
-});
-
-// Run end-to-end tests with Nightwatch
-gulp.task('e2e', function() {
+/** Runs end-to-end tests with Nightwatch and Firefox */
+gulp.task('e2e',function() {
   return gulp.src('')
     .pipe(nightwatch({
-      configFile: 'test/e2e/nightwatch.json'
+      configFile: paths.nightwatch
     }));
 });
 
-// Run end-to-end test with Nightwatch, Chrome version
-gulp.task('e2e:chrome', function() {
+/** Runs end-to-end tests with Nightwatch and Chrome */
+gulp.task('e2e:chrome',function() {
   return gulp.src('')
     .pipe(nightwatch({
-      configFile: 'test/e2e/nightwatch.json',
-      cliArgs: ['--env chrome']
+      configFile: paths.nightwatch,
+      cliArgs: {env: 'chrome'}
+    }));
+});
+
+/** Runs end-to-end tests with Nightwatch and PhantomJS */
+gulp.task('e2e:phantomjs', function() {
+  return gulp.src('')
+    .pipe(nightwatch({
+      configFile: paths.nightwatch,
+      cliArgs: {env: 'phantomjs'}
     }));
 });
