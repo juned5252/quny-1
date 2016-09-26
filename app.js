@@ -15,7 +15,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(favicon(path.join(__dirname, 'assets', 'favicon.ico')));
-app.use(logger('dev'));
+app.use(logger('dev', {
+  skip: function (req, res) { return res.statusCode < 400; }
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());

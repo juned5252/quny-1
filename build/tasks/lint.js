@@ -1,8 +1,8 @@
-var gulp      = require('gulp');
-var eslint    = require('gulp-eslint');
+var gulp = require('gulp');
+var eslint = require('gulp-eslint');
 var pugLinter = require('gulp-pug-linter');
-var stylint   = require('gulp-stylint');
-var paths     = require('../paths');
+var stylint = require('gulp-stylint');
+var paths = require('../paths');
 
 /** Runs eslint on all .js files */
 gulp.task('lint:js', function () {

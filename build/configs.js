@@ -10,28 +10,22 @@ module.exports = {
     }
   },
 
-  // BrowserSync configs
   browserSync: {
     online: false,
     proxy: 'http://localhost:3000'
   },
 
-  // Mocha configs
+  // Mocha config with Istanbul coverage enabled
   mocha: {
-    reporter: 'dot'
-  },
-
-  // Mocha configs with Istanbul coverage enabled
-  mochaIstanbul: {
     reporter: 'dot',
     istanbul: {
-      dir: 'test/coverage'
+      dir: 'bin/coverage/'
     }
   },
 
-  // selenium-standalone configs
-  selenium: {
-    basePath: 'test/e2e/lib',
+  // selenium-standalone
+  e2eDrivers: {
+    basePath: 'bin/drivers',
     version: '2.53.1',
     baseURL: 'https://selenium-release.storage.googleapis.com',
     logger: function () {},

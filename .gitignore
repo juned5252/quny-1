@@ -36,11 +36,11 @@ npm-debug.log
 builtAssets/
 
 # Istanbul Coverage
-test/coverage
+bin/coverage
 
 # Nightwatch
-test/e2e/lib
-test/e2e/reports
+bin/drivers
+bin/reports
 
 # Phantomjs
 phantomjsdriver.log
