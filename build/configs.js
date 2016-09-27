@@ -12,7 +12,8 @@ module.exports = {
 
   browserSync: {
     online: false,
-    proxy: 'http://localhost:3000'
+    port: 3001,
+    proxy: 'http://localhost:3000',
   },
 
   // Mocha config with Istanbul coverage enabled
