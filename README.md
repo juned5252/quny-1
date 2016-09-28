@@ -17,8 +17,6 @@ Set up the app for development by setting the environmental variables:
   export FSD_CONN_STR=postgres://username:password@localhost:5432/database_name
   ```
 
-Create a database for development and set the enviromental variable `FSD_CONN_STR` to the database's connection string.
-
 Download project dependencies:
 
   ```shell
