@@ -4,7 +4,7 @@
 
 A website to manage the selling/sharing of personal items, across multiple social media platforms.
 
-## Running The App
+### Running The App
 
 Make sure [Node.js](https://nodejs.org/en/) and [PostgresSQL](https://www.postgresql.org/) are installed.
 
@@ -32,7 +32,8 @@ Run the app:
 Browse to `http://localhost:3001/`.
 > Note, making changes to certain files, triggers a full browser refresh.
 
-## Running The Tests
+
+### Running The Tests
 
 Set up the app for testing by setting the environmental variables:
 
