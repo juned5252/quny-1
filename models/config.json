@@ -1,20 +1,11 @@
 {
   "development": {
-    "username": "stuffuser",
-    "password": "",
-    "database": "friendlystuff",
-    "host": "127.0.0.1",
-    "port": "5432",
-    "dialect": "postgres"
+    "conn_str": "FSD_CONN_STR"
   },
   "test": {
-    "username": "update me",
-    "password": "update me",
-    "database": "update_me",
-    "host": "update me",
-    "dialect": "update me"
+    "conn_str": "FST_CONN_STR"
   },
   "production": {
-    "use_env_variable": "FS_DB_CONNECTION"
+    "conn_str": "FSP_CONN_STR"
   }
 }
