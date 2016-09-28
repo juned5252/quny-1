@@ -4,7 +4,7 @@ node_js:
   - "6"
 
 env:
-  - NODE_ENV='test'
+  - NODE_ENV=test
   - FST_CONN_STR=postgres://postgres@localhost:5432/friendlystuff
 
 services:
