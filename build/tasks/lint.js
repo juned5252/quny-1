@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var eslint = require('gulp-eslint');
 var pugLinter = require('gulp-pug-linter');
 var stylint = require('gulp-stylint');
+var runSequence = require('run-sequence');
 var paths = require('../paths');
 
 /** Runs eslint on all .js files */
@@ -14,8 +15,7 @@ gulp.task('lint:js', function () {
 
 /** Runs pug-linter on all .pug files */
 gulp.task('lint:pug', function () {
-  return gulp
-    .src(paths.views)
+  return gulp.src(paths.views)
     .pipe(pugLinter())
     .pipe(pugLinter.reporter('fail'));
 });
@@ -26,4 +26,9 @@ gulp.task('lint:styl', function () {
     .pipe(stylint())
     .pipe(stylint.reporter())
     .pipe(stylint.reporter('fail'));
+});
+
+/** Runs all the linting tasks */
+gulp.task('lint', function () {
+  runSequence('lint:js', 'lint:pug', 'lint:styl');
 });
