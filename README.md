@@ -8,13 +8,20 @@ A website to manage the selling/sharing of personal items, across multiple socia
 
 Make sure [NodeJS](https://nodejs.org/en/) and [Postgres](https://www.postgresql.org/) are installed.
 
-By default, the app assume that you want to run it in development mode, but you can explicitally set the environmental variable: `NODE_ENV=development`.
+Set up the app for development:
+
+  ```shell
+  export NODE_ENV=development
+  
+  # Create a database for development and set the connection string to the environmental variable FSD_CONN_STR:
+  export FSD_CONN_STR=postgres://username:password@localhost:5432/database_name
+  ```
 
 Create a database for development and set the enviromental variable `FSD_CONN_STR` to the database's connection string.
 
 Download project dependencies:
 
-  ```ssh
+  ```shell
   npm install
   ```
 
@@ -29,19 +36,24 @@ Browse to `http://localhost:3001/`.
 
 ## Running The Tests
 
-Set the enviromental variable: `NODE_ENV=test`.
+Set up the app for testing:
 
-Create a database for testing and set the enviromental variable `FST_CONN_STR` to the testing database's connection string.
+  ```shell
+  export NODE_ENV=test
+  
+  # Create a database for testing and set the connection string to the environmental variable FST_CONN_STR:
+  export FST_CONN_STR=postgres://username:password@localhost:5432/database_name
+  ```
 
 Run unit tests using [Mocha](https://mochajs.org/):
 
-  ```ssh
+  ```shell
   gulp test
   ```
 
 Run end-to-end tests using [Nightwatch](http://nightwatchjs.org/):
 
-  ```ssh
+  ```shell
   gulp e2e:drivers
   gulp e2e
   ```
