@@ -8,11 +8,11 @@ A website to manage the selling/sharing of personal items, across multiple socia
 
 Make sure [Node.js](https://nodejs.org/en/) and [PostgresSQL](https://www.postgresql.org/) are installed.
 
-Set up the app for development by setting the environmental variables:
+For development, set the following environmental variables:
 
   ```shell
   export NODE_ENV=development
-  
+
   # Create a database for development and set its connection string to FSD_CONN_STR:
   export FSD_CONN_STR=postgres://username:password@localhost:5432/database_name
   ```
@@ -35,7 +35,7 @@ Browse to `http://localhost:3001/`.
 
 ### Running The Tests
 
-Set up the app for testing by setting the environmental variables:
+For testing, set the following environmental variables:
 
   ```shell
   export NODE_ENV=test
