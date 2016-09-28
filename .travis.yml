@@ -9,4 +9,4 @@ env:
 script: gulp travis
 
 after_success:
-  - ./node_modules/.bin/coveralls --verbose < test/coverage/lcov.info
+  - ./node_modules/.bin/coveralls --verbose < bin/coverage/lcov.info
