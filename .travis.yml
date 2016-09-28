@@ -4,9 +4,15 @@ node_js:
   - "6"
 
 env:
-  - NODE_ENV="development"
+  - NODE_ENV=test FST_CONN_STR=postgres://postgres@localhost:5432/friendlystuff
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database friendlystuff;' -U postgres
 
 script: gulp travis
 
 after_success:
-  - ./node_modules/.bin/coveralls --verbose < test/coverage/lcov.info
+  - ./node_modules/.bin/coveralls --verbose < bin/coverage/lcov.info

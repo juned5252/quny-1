@@ -30,7 +30,9 @@ gulp.task('e2e', ['server'], function () {
   return gulp.src('')
     .pipe(nightwatch({
       configFile: paths.nightwatch
-    })).on('end', function () {
+    })).on('error', function() {
+      server.kill();
+    }).on('end', function () {
       server.kill();
     });
 });
@@ -44,7 +46,9 @@ gulp.task('e2e:phantomjs', ['server'], function () {
     .pipe(nightwatch({
       configFile: paths.nightwatch,
       cliArgs: { env: 'phantomjs' }
-    })).on('end', function() {
+    })).on('error', function() {
+      server.kill();
+    }).on('end', function() {
       server.kill();
     });
 });

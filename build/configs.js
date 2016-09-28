@@ -1,11 +1,9 @@
 
 module.exports = {
-  // Server configs
   server: {
     path: 'bin/www',
     execArgv: ['--harmony'],
     env: {
-      NODE_ENV: 'development',
       DEBUG: 'FriendlyStuff:*'
     }
   },
@@ -13,10 +11,9 @@ module.exports = {
   browserSync: {
     online: false,
     port: 3001,
-    proxy: 'http://localhost:3000',
+    proxy: 'http://localhost:3000'
   },
 
-  // Mocha config with Istanbul coverage enabled
   mocha: {
     reporter: 'dot',
     istanbul: {

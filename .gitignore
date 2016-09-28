@@ -41,6 +41,3 @@ bin/coverage
 # Nightwatch
 bin/drivers
 bin/reports
-
-# Phantomjs
-phantomjsdriver.log

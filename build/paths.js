@@ -8,7 +8,12 @@ module.exports = {
   sources: [app, controllers, views, stylus],
 
   // Linting
-  scripts: ['**/*.js', '!node_modules/**', '!bin/coverage/**'],
+  scripts: [
+    '**/*.js',
+    '!node_modules/**',
+    '!bin/coverage/**',
+    '!models/migrations/**'
+  ],
   stylus: stylus,
   views: views,
 

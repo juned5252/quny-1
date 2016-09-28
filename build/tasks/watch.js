@@ -14,8 +14,9 @@ gulp.task('server:start', function () {
   return new Promise(function (resolve, reject) {
     server.listen(configs.server, function (error) {
       if (!error) {
-        bs.init(configs.browserSync);
-        resolve();
+        bs.init(configs.browserSync, function() {
+          resolve();
+        });
       } else {
         reject(error);
       }
