@@ -22,7 +22,7 @@ html
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
           li
-            a(href='#') Home
+            a(href='/') Home
           li
             a(href='#') About
           li
@@ -39,23 +39,23 @@ html
             br
             p  one post to rule them all!
           .col-md-6.col-sm-6.col-xs-12.contact-form
-            form
+            form(role='form', action="/signup",method="post")
               .row
                 .col-md-6.col-sm-12
                   .form-group
-                    input#first.form-control(type='text', placeholder='First Name')
+                    input#first.form-control(type='text', name="firstname", placeholder='First Name')
                 .col-md-6.col-sm-12
                   .form-group
-                    input#last.form-control(type='text', placeholder='Last Name')
+                    input#last.form-control(type='text', name="lastname", placeholder='Last Name')
                 .col-md-12.col-sm-12
                   .form-group
-                    input.form-control(type='tel', placeholder='Phone Number')
+                    input.form-control(type='tel', name="phone", placeholder='Phone Number')
                 .col-md-12.col-sm-12
                   .form-group
-                    input.form-control(type='email', placeholder='Email Address')
+                    input.form-control(type='email', name="username", placeholder='Email Address')
                 .col-md-12.col-sm-12
                   .form-group
-                    input.form-control(type='email', placeholder='Password')
+                    input.form-control(type='Password', name="password", placeholder='Password')
               |  
               button#getstarted.btn.btn-info.btn-lg
                 i#brandlogo.fa.fa-paper-plane(aria-hidden='true')
