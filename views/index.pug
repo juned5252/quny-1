@@ -1,5 +1,28 @@
 extends layout
 
 block content
-  h1(id='title')= title
-  p Welcome to #{title}
+  .container
+        .row
+          .col-lg-12
+            #content
+              h1 Friendly Stuff
+              h3  Sell Quickly To Those Who Know You Best
+              hr
+              |  
+              a(href='#')
+                button#getstarted.btn.btn-info.btn-lg
+                  span.glyphicon.glyphicon-send.glyph(aria-hidden='true')
+                  | Get Started!
+              br
+              h2 Our Supported API&apos;s
+              br
+              .col-lg-3.col-md-3.col-sm-3.col-xs-3.circle1
+                img#facebook(src='https://www.facebook.com/images/fb_icon_325x325.png')
+              .col-lg-3.col-md-3.col-sm-3.col-xs-3.circle1
+                img#twitter(src='https://cdn3.iconfinder.com/data/icons/social-icons-5/607/Twitterbird.png')
+              .col-lg-3.col-md-3.col-sm-3.col-xs-3.circle1
+                img#instagram(src='http://www.logotypes101.com/logos/752/46CB6EFDF45D02DF8C1AE688B5806F85/2016_instagram_logo.png')
+              .col-lg-3.col-md-3.col-sm-3.col-xs-3.circle1
+                img#google(src='http://www.freeiconspng.com/uploads/google-plus-icon--circle-iconset--martz90-20.png')
+          footer#footer
+            .copyrights.text-center  &copy; Copyright 2016 - Friendly Stuff

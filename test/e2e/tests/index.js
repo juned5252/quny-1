@@ -3,9 +3,7 @@ module.exports = {
     var page = client.page.index();
 
     page.navigate().assert.title('Friendly Stuff');
-    page.navigate().expect.element('@title').to.be.present;
-    page.navigate().assert.containsText('@title', 'Friendly Stuff');
-    
+
     client.end();
   }
 };
