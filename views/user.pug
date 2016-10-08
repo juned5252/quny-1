@@ -1,0 +1,6 @@
+extends layout
+
+block content
+
+	h1 User details
+	p User: #{user.username} Password: #{user.password} createdAt: #{moment(user.createdAt).format('llll')} updatedAt: #{moment(user.updatedAt).format('llll')}
