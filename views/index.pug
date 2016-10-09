@@ -8,7 +8,13 @@ block content
               h1 Friendly Stuff
               h3  Sell Quickly To Those Who Know You Best
               hr
-              |  
+              if (!user)
+                h4 Welcome! to the site :)
+              if (newUser)
+                h4 Success! New user created :)
+              if (user)
+                h4 You are currently logged in as #{user.username}
+              br
               a(href='#')
                 button#getstarted.btn.btn-info.btn-lg
                   span.glyphicon.glyphicon-send.glyph(aria-hidden='true')
