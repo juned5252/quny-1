@@ -1,7 +1,6 @@
 extends layout
 
 block content
-
-	h1 List all Users
-	each row in user
-		li User: #{row.username} Password: #{row.password} createdAt: #{moment(row.createdAt).format('llll')} updatedAt: #{moment(row.updatedAt).format('llll')}
+  h1 List all Users
+  each row in user
+    li User: #{row.username} Password: #{row.password} createdAt: #{moment(row.createdAt).format('llll')} updatedAt: #{moment(row.updatedAt).format('llll')}
