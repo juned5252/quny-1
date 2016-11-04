@@ -1,7 +1,0 @@
-extends layout
-
-block content
-
-	h1 List all Users
-	each row in user
-		li User: #{row.username} Created at: #{moment(row.createdAt).format('llll')} Updated at: #{moment(row.updatedAt).format('llll')}
