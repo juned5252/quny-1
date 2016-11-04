@@ -4,9 +4,6 @@ var stylus = 'assets/css/**/*.styl';
 var views = 'views/**/*.pug';
 
 module.exports = {
-  // BrowserSync watches these files for changes
-  sources: [app, controllers, views, stylus],
-
   // Linting
   scripts: [
     '**/*.js',

@@ -1,0 +1,19 @@
+extends layout.pug
+
+block title
+  title Quny | Login
+
+block css
+  !=css('login')
+
+block content
+  div.outer-container
+    div.middle-container
+      main#login-container
+        h1
+          i.fa.fa-key.fa-fw.animated.fadeInLeft
+          | Login
+        div.form-group
+          input.form-control(type='text' id='email' placeholder='Email')
+          input.form-control(type='password' id='password' placeholder='Password')
+          a.btn.btn-primary.form-control(id='submit') Submit

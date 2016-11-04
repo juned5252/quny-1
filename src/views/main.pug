@@ -1,0 +1,16 @@
+extends layout.pug
+
+
+block title
+  title Quny | Main
+
+block css
+  !=css('main')
+
+block nav
+  div.nav_bar
+  li.nav-item
+    a.btn.btn-primary#logout(href='/') Logout
+
+block content
+  span Hello World!

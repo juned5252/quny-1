@@ -12,24 +12,6 @@ gulp.task('clean:assets', function () {
     .pipe(vp(del));
 });
 
-/** Deletes /bin/coverage */
-gulp.task('clean:coverage', function () {
-  return gulp.src(paths.coverage)
-    .pipe(vp(del));
-});
-
-/** Deletes /bin/drivers */
-gulp.task('clean:drivers', function () {
-  return gulp.src(paths.drivers)
-    .pipe(vp(del));
-});
-
-/** Deletes /bin/reports */
-gulp.task('clean:reports', function () {
-  return gulp.src(paths.reports)
-    .pipe(vp(del));
-});
-
 /** Deletes /bin */
 gulp.task('clean:bin', [
   'clean:coverage',

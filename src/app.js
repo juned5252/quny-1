@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var connect_assets = require('connect-assets')();
-var expressSession  = require('express-session')
+var expressSession  = require('express-session');
 var Strategy = require('./middlewares/authentication');
 var passport = require('passport');
 var passportLocal = require('passport-local').Strategy;
@@ -19,20 +19,20 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(favicon(path.join(__dirname, 'assets', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, '../assets', 'favicon.ico')));
 app.use(logger('dev', {
   skip: function (req, res) { return res.statusCode < 400; }
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, '../assets')));
 app.use(connect_assets);
 
 app.use(expressSession({
-    secret: process.env.SESSION_SECRET || 'secret',
-    resave: false,
-    saveUninitialized: false
+  secret: process.env.SESSION_SECRET || 'secret',
+  resave: false,
+  saveUninitialized: false
 }));
 
 app.use(passport.initialize());
