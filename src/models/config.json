@@ -3,7 +3,7 @@
     "conn_str": "FSD_CONN_STR"
   },
   "test": {
-    "conn_str": "FST_CONN_STR"
+    "conn_str": "FSD_CONN_STR"
   },
   "production": {
     "conn_str": "FSP_CONN_STR"

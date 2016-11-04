@@ -8,7 +8,7 @@ var env       = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/config.json')[env];
 var db        = {};
 
-var dbGlobals = (env === 'development') ? { logging: true } : {};
+var dbGlobals = (env === 'development') ? { logging: console.log } : { logging: false };
 
 var sequelize = new Sequelize(process.env[config.conn_str], dbGlobals);
 

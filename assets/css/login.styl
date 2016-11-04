@@ -1,0 +1,64 @@
+/*
+* General Stuff
+*/
+
+html
+  height: 100%
+
+body
+  background-image: url('../img/moon.jpg')
+  background-size: cover
+  background-position: center
+
+// CSS below is used to center page content horizontally and vertically
+// Solution credited to the Stack Overflow user Billbad
+// Link: http://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers
+div.outer-container
+  display: table
+  position: absolute
+  height: 100%
+  width: 100%
+  margin: 0
+
+div.middle-container
+  display: table-cell
+  vertical-align: middle
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHElEQVQYV2NkYGCYycDAkA6jGRkgAC4IEsCvAgDsygc3ExWdUgAAAABJRU5ErkJggg==') repeat
+  background-attachment: fixed
+
+/*
+* Login
+*/
+center()
+  margin-left: auto
+  margin-right: auto
+  text-align: center
+
+input-formatting()
+  width: 300px
+  input
+    margin: 10px auto
+
+main#login-container
+  center()
+  input-formatting()
+  h1
+    color: white
+  i.fa-key
+    color: gold
+  a.btn
+    color: white
+
+/*
+* Footer
+*/
+footer
+  text-align: center
+  bottom: 10px
+  height: 50px
+  left: 0
+  position: absolute
+  right: 0
+  color: white
+  #copyright
+    padding: 0 5px

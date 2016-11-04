@@ -1,17 +1,20 @@
 
 module.exports = {
-  server: {
+  devServer: {
     path: 'bin/www',
     execArgv: ['--harmony'],
     env: {
-      DEBUG: 'FriendlyStuff:*'
+      DEBUG: 'Quny:*',
+      NODE_ENV: 'development'
     }
   },
 
-  browserSync: {
-    online: false,
-    port: 3001,
-    proxy: 'http://localhost:3000'
+  testServer: {
+    path: 'bin/www',
+    execArgv: ['--harmony'],
+    env: {
+      NODE_ENV: 'development'
+    }
   },
 
   mocha: {

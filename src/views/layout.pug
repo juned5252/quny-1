@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+  head
+    block title
+    !=css('vendor/bootstrap')
+    !=css('vendor/font-awesome')
+    !=css('vendor/animate')
+    !=css('vendor/dragula')
+    !=css('common')
+    block css
+
+  body
+    nav.navbar
+      a.navbar-brand(href="/")
+        span#queue Qu
+        | ny
+      ul.nav.navbar-nav.pull-right
+        block nav
+
+    block content
+
+    footer
+      span &#169;
+      span#copyright
+      | Friendly Pirates
+
+    !=js('vendor/jquery-3.1.1')
+    !=js('vendor/tether')
+    !=js('vendor/bootstrap')
+    !=js('vendor/firebase-app')
+    !=js('vendor/firebase-auth')
+    !=js('vendor/firebase-database')
+    !=js('vendor/firebase-messaging')
+    !=js('vendor/dragula')
+    !=js('vendor/moment')
+    !=js('fb.config')
+    !=js('main')
