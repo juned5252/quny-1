@@ -16,10 +16,6 @@ module.exports = {
 
   // Testing
   test: 'test/unit/**/*.test.js',
-  nightwatch: 'nightwatch.json',
-  drivers: 'bin/drivers/',
-  coverage: 'bin/coverage/',
-  reports: 'bin/reports/',
   bin: 'bin/',
 
   // Connect-Assets
