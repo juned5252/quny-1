@@ -1,8 +1,6 @@
-# Friendly Stuff 
+# Quny
 
-[![Build Status](https://travis-ci.org/robinsoncol/friendly-stuff.svg?branch=master)](https://travis-ci.org/robinsoncol/friendly-stuff) [![Coverage Status](https://coveralls.io/repos/github/robinsoncol/friendly-stuff/badge.svg)](https://coveralls.io/github/robinsoncol/friendly-stuff)
-
-A website to manage the selling/sharing of personal items, across multiple social media platforms.
+[![Build Status](https://travis-ci.org/robinsoncol/friendly-stuff.svg?branch=master)](https://travis-ci.org/robinsoncol/friendly-stuff)
 
 ### Running The App
 
@@ -48,11 +46,4 @@ Run unit tests using [Mocha](https://mochajs.org/):
 
   ```shell
   gulp test
-  ```
-
-Run end-to-end tests using [Nightwatch](http://nightwatchjs.org/):
-
-  ```shell
-  gulp e2e:drivers
-  gulp e2e
   ```

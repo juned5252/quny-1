@@ -6,7 +6,6 @@ var configs = require('../configs');
 
 /**
  * Runs unit tests with Mocha
- * Generates coverage report under /bin/coverage
  **/
 gulp.task('test', () => {
   return gulp.src(paths.test, { read: false })
@@ -15,6 +14,5 @@ gulp.task('test', () => {
 
 /**
  * Runs integration tests for Travis CI
- * This task hangs on Windows
  **/
 gulp.task('travis', ['test']);
