@@ -5,13 +5,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var connect_assets = require('connect-assets')();
-var expressSession  = require('express-session');
-var Strategy = require('./middlewares/authentication');
-var passport = require('passport');
-var passportLocal = require('passport-local').Strategy;
 
 var index = require('./controllers/index');
-var user = require('./controllers/user');
 
 var app = express();
 
@@ -29,18 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../assets')));
 app.use(connect_assets);
 
-app.use(expressSession({
-  secret: process.env.SESSION_SECRET || 'secret',
-  resave: false,
-  saveUninitialized: false
-}));
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.use(passportLocal);//Web Authentication
 app.use('/', index);
-app.use('/', user);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
