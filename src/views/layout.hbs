@@ -1,29 +1,34 @@
-doctype html
-html(lang='en')
-  head
-    block title
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--block title -->
+    <!--
     !=css('vendor/bootstrap')
     !=css('vendor/font-awesome')
     !=css('vendor/animate')
     !=css('vendor/dragula')
     !=css('common')
     block css
+    -->
+  </head>
 
-  body
-    nav.navbar
-      a.navbar-brand(href="/")
-        span#queue Qu
-        | ny
-      ul.nav.navbar-nav.pull-right
-        block nav
+  <body>
+    <nav class='navbar'>
+      <a class='navbar-brand' href='/'>
+        <span id='queue'>Qu</span>ny
+      </a>
+      <ul class='nav navbar-nav pull-right'>
+        <!--block nav-->
+      </ul>
+    </nav>
 
-    block content
+    <!-- block content -->
 
-    footer
-      span &#169;
-      span#copyright
-      | Friendly Pirates
+    <footer>
+      <span>&#169; Friendly Pirates</span>
+    </footer>
 
+    <!--
     !=js('vendor/jquery-3.1.1')
     !=js('vendor/tether')
     !=js('vendor/bootstrap')
@@ -34,3 +39,6 @@ html(lang='en')
     !=js('vendor/dragula')
     !=js('vendor/moment')
     !=js('main')
+    -->
+  </body>
+</html>
